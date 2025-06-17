@@ -6,7 +6,7 @@ Welcome to **PromptJang** (พร้อมแจ้ง), a side project dedicate
 
 - **Exploration**: Platform for communication for business to end-users
 - **Technology Stack Experimentation**: Hands-on experience with a variety of technologies:
-  - **TechStack**: Rust, SvelteKit
+  - **TechStack**: Rust, Nuxt
   - **Deployment**: Cloudflare Stack
 
 ## 💡 About the Name
