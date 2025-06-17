@@ -1,21 +1,16 @@
 # PromptJang - พร้อมแจ้ง
 
-Welcome to **PromptJang** (พร้อมแจ้ง), a side project dedicated to exploring the way we reach end-users through different types of messaging. This organization is a sandbox for experimenting with cutting-edge technologies and concepts within the engagement/communication platform.
+Welcome to **PromptJang** (พร้อมแจ้ง), an open-source notification infrastructure that simplifies how businesses communicate with their users. We're building modern solutions for push notifications, email, timeline events, silent push, and in-app messaging - all designed to be developer-friendly and cost-effective.
 
-## 🚀 Project Goals
+**Our Vision: Effortless notifications to your consumers**
 
-- **Exploration**: Platform for communication for business to end-users
-- **Technology Stack Experimentation**: Hands-on experience with a variety of technologies:
-  - **TechStack**: Rust, Nuxt
-  - **Deployment**: Cloudflare Stack
+This organization serves as both our open-source home and a technical playground for exploring next-generation communication patterns. We believe great notification systems should be accessible to everyone, from solo developers to growing businesses.
+
+**Exploration**: Platform for communication for business to end-users
 
 ## 💡 About the Name
 
 "PromptJang" (พร้อมแจ้ง) is a Thai phrase meaning "I'm ready to inform" reflecting the project's focus on any communication approaches.
-
-## 🤝 Contributing
-
-Currently, this is a personal side project. While direct contributions are not accepted at this time, feel free to fork any repositories for your own experimentation.
 
 ## 📄 License
 
