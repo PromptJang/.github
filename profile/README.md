@@ -17,8 +17,8 @@ PromptJang (พร้อมแจ้ง) means *"Ready to Inform"* in Thai. Ever
 
 ## Links
 
-- **Website**: [promptjang.net](https://promptjang.net) — coming soon
-- **Docs**: [docs.promptjang.net](https://docs.promptjang.net) — coming soon
+- **Website**: [promptjang.net](https://promptjang.net)
+- **Docs**: [docs.promptjang.net](https://docs.promptjang.net)
 
 ## License
 
