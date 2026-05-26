@@ -1,41 +1,44 @@
-# PromptJang - พร้อมแจ้ง
+# PromptJang — พร้อมแจ้ง
 
-Welcome to **PromptJang** (พร้อมแจ้ง), the open-source **Flight Recorder and Communication Bus for AI Agents**.
+**Async reliability and observability for webhook delivery.**
 
-As the agent economy scales, AI systems need a safe, reliable, and trackable way to communicate with external APIs, other agents, and human operators. PromptJang moves beyond simple B2C notifications, providing a high-performance routing, governance, and observability layer designed specifically for human notification, callback notifier layer, and your AI Agent mailbox.
+Webhooks fail silently. Retries are hard to get right. Observability is an afterthought. PromptJang fixes all three — so you can focus on building your product, not debugging delivery.
 
-**Our Vision: The standard, secure communication layer for the AI Agent ecosystem.**
+PromptJang (พร้อมแจ้ง) means *"Ready to Inform"* in Thai. Every webhook you send is tracked, retried with exponential backoff, and delivered with full visibility into what happened and when.
 
-This organization serves as our open-source home. We are building developer-first infrastructure that ensures agent communications are structured, traceable, and safe—from local testing to distributed enterprise production.
+## What PromptJang Does
 
-## 🚀 Core Capabilities
+- **Reliable Delivery** — Automatic retries with exponential backoff. Events flow through a state machine: `Queued → Processing → Delivered`. If delivery fails, PromptJang retries up to the configured limit, then marks the event as expired with a full audit trail.
+- **HMAC Signature Verification** — Every inbound event is verified against an HMAC-SHA256 signature. No unsigned payloads reach your endpoints.
+- **Event Replay** — Re-deliver any past event with one API call. Useful for recovering from downstream outages without re-processing from source.
+- **SSRF Protection** — Webhook target URLs are validated against private IPs, localhost, link-local, and carrier-grade NAT ranges. No internal network exposure.
+- **Delivery Observability** — Track every delivery attempt: HTTP status code, response body, latency, and error details. Know exactly what happened and when.
+- **Per-Tenant Isolation** — Organizations, API keys, and endpoints are fully isolated. Cross-tenant access is enforced at every layer.
 
-  * **Agent-First Ingress (HTTP & MCP):** Native Webhook endpoints and Model Context Protocol (MCP) integration, allowing LLMs to discover and use PromptJang as a native tool instantly.
-  * **Intent-Based Routing:** Stop hardcoding API integrations in your agent prompts. Emit an intent, and let PromptJang validate the JSON schema (bouncing hallucinations) and route it to the correct downstream system.
-  * **The "Flight Recorder" (Observability):** Deep trace visibility into every payload. Track token usage, latency, and view sequence diagrams of multi-agent negotiations.
-  * **Enterprise Governance:** Built-in middleware for PII masking, rate limiting, and exact-once delivery semantics (Idempotency).
-  * **Multi-Channel Egress:** Seamlessly fan-out payloads to other AI Agent webhooks, enterprise chat (Slack, Discord), or traditional human channels (Email, Push).
-  * **Progressive Architecture:** Run as a zero-config, single binary monolith for local development, or scale out to a distributed Pub/Sub consumer architecture using Redis/Postgres for production.
+## Tech Stack
 
-## 💡 About the Name
+Built for the edge, with security and performance as first-class concerns:
 
-"PromptJang" (พร้อมแจ้ง) is a Thai phrase meaning *"Ready to Inform."* It reflects our mission: ensuring your infrastructure is always ready to receive prompts, route intents, and deliver agent communications securely and reliably.
+| Layer | Technology |
+|---|---|
+| Runtime | Rust on Cloudflare Workers (WebAssembly) |
+| Database | Cloudflare D1 (SQLite at the edge) |
+| Object Storage | Cloudflare R2 (event payloads) |
+| Message Queue | Cloudflare Queues (delivery pipeline) |
+| Cache | Cloudflare KV (rate limiting) |
+| Billing | Stripe |
 
-## 📄 License
+## Links
 
-All core projects within this organization are licensed under the [MIT License](https://www.google.com/search?q=LICENSE), keeping the foundation open and accessible for all developers.
+- **Website**: [promptjang.net](https://promptjang.net) — coming soon
+- **Docs**: [docs.promptjang.net](https://docs.promptjang.net) — coming soon
 
-## 📬 Contact & Maintainers
+## License
 
-For any inquiries, architectural discussions, or feature suggestions, please open an issue on the relevant repository.
+All projects are licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
-**Connect with the creator:**
+## Contact
 
-  * Facebook: [Thanaphoom Babparn](https://www.facebook.com/thanaphoom.mart/)
-  * FB Page: [TP Coder](https://www.facebook.com/tpcoder)
-  * LinkedIn: [Thanaphoom Babparn](https://www.linkedin.com/in/thanaphoom-babparn/?locale=en_US)
-  * Website: [TP Coder — Portfolio](https://portfolio.tpcoder.dev/)
-
------
-
-*Thank you for visiting PromptJang\! Let's build the future of agent infrastructure.*
+- Facebook: [Thanaphoom Babparn](https://www.facebook.com/thanaphoom.mart/)
+- LinkedIn: [Thanaphoom Babparn](https://www.linkedin.com/in/thanaphoom-babparn/?locale=en_US)
+- Website: [TP Coder — Portfolio](https://portfolio.tpcoder.dev/)
