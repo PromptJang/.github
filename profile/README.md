@@ -15,19 +15,6 @@ PromptJang (พร้อมแจ้ง) means *"Ready to Inform"* in Thai. Ever
 - **Delivery Observability** — Track every delivery attempt: HTTP status code, response body, latency, and error details. Know exactly what happened and when.
 - **Per-Tenant Isolation** — Organizations, API keys, and endpoints are fully isolated. Cross-tenant access is enforced at every layer.
 
-## Tech Stack
-
-Built for the edge, with security and performance as first-class concerns:
-
-| Layer | Technology |
-|---|---|
-| Runtime | Rust on Cloudflare Workers (WebAssembly) |
-| Database | Cloudflare D1 (SQLite at the edge) |
-| Object Storage | Cloudflare R2 (event payloads) |
-| Message Queue | Cloudflare Queues (delivery pipeline) |
-| Cache | Cloudflare KV (rate limiting) |
-| Billing | Stripe |
-
 ## Links
 
 - **Website**: [promptjang.net](https://promptjang.net) — coming soon
